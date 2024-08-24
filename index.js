@@ -14,6 +14,8 @@ io.on('connection', (socket) => {
     socket.on('startBroadcast', () => {
         console.log('Broadcast started');
         socket.broadcast.emit('startBroadcast');
+      socket.emit('broadcastStatus', 'started'); // or 'failed'
+
     });
 
     socket.on('stopBroadcast', () => {
